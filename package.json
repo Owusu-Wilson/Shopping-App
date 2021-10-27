@@ -8,15 +8,31 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/stack": "^6.0.11",
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-    "react-native-web": "~0.13.12"
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-web": "^0.17.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "shopping-app",
+  "description": "This project is a shopping app.\r This is not a full blown project but a tutorial to basic features of react native.\r >>Languages : Javascript - 100%\r # PURPOSE\r This was developed as a school project for a mobile development course.\r ## ABOUT DEVELOPER\r I'm <i>Owusu Wilson</i>. A statistics and computer science student.\r Looking forward to contribute to your web, python and react native projects.\r You can contact me via:\r ## CONTACT\r >> Email : <wowusu008@st.ug.edu.gh>\r >> Telephone: <+233 277 589 546>\r >> ID : 10844432",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Owusu-Wilson/Shopping-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Owusu-Wilson/Shopping-App/issues"
+  },
+  "homepage": "https://github.com/Owusu-Wilson/Shopping-App#readme"
 }
