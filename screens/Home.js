@@ -6,6 +6,7 @@ import ItemPopup from "./bikes_list";
 
 
 let a = "book";
+let num_of_scrollables = 30; 
 // forcing changes
 
 export default function Home(params) {
