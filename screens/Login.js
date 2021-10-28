@@ -39,16 +39,19 @@ export default function Login(params) {
       <Text style={{ fontSize: 30, color: "grey" }}>Welcome to</Text>
       <Text style={{ fontSize: 40, fontWeight: "bold" }}>Rene BookStore</Text>
       
+
+      {/* Login button */}
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Home");
+          navigation.navigate("AuthenticateUser"); // button event handles to the User Login screen
+          // raises screen to accept username and password
         }}
         style={{
           padding: 15,
           paddingHorizontal: 80,
           marginTop: 10,
           alignItems: "center",
-          borderRadius: 10,
+          borderRadius: 25,
           flexDirection: "row",
           backgroundColor: "black",
         }}
@@ -57,16 +60,17 @@ export default function Login(params) {
         <Text style={{ paddingLeft: 10, color: "white" }}>Login</Text>
       </TouchableOpacity>
 
+    {/* Sign Up button */}
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Sign");
+          navigation.navigate("SignUp"); // button event handles to the SignUp screen
         }}
         style={{
           padding: 15,
           paddingHorizontal: 80,
           marginTop: 10,
           alignItems: "center",
-          borderRadius: 10,
+          borderRadius: 25,
           flexDirection: "row",
           backgroundColor: "black",
         }}

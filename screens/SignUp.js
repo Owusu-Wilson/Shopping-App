@@ -3,8 +3,8 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 const image = { uri: "https://reactjs.org/logo-og.png" };
 
-
-export default function Sign() {
+// This screen is raised to register a new user.
+export default function SignUp() {
     return (
 
   <View style={styles.container}>
