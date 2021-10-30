@@ -8,7 +8,7 @@ export default function Login(params) {
   return (
     <View
       style={{
-        backgroundColor: "white",
+        backgroundColor: "sky-blue",
         flex: 1,
         paddingHorizontal: 10,
         justifyContent: "center",

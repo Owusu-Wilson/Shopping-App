@@ -7,6 +7,7 @@ import Login from "./screens/Login";
 import Home from "./screens/Home";
 import SignUp from "./screens/SignUp";
 import AuthenticateUser from "./screens/AuthenticateUser";
+import BooksList from "./screens/books_list";
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           <MainNavigator.Screen name="Home" component={Home} />
           <MainNavigator.Screen name="SignUp" component={SignUp} />
           <MainNavigator.Screen name="AuthenticateUser" component={AuthenticateUser} />
+          <MainNavigator.Screen name="BooksList" component={BooksList} />
 
           
          

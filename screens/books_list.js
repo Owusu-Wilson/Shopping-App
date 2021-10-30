@@ -11,10 +11,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   UIManager,
-  View
+  View, Text
 } from 'react-native';
 const { width } = Dimensions.get('screen');
-
+let books_cover = "https://i.pinimg.com/564x/d9/7c/51/d97c518471a161c6badd53b365ca55d6.jpg";
+let book = "https://legiit-service.s3.amazonaws.com/b9bf2238bed8f20b75358d8f5d2dd332/ffb148349fb4c1fcc505f88e64d63c77.jpg"
 let data = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
@@ -25,7 +26,7 @@ if (Platform.OS === 'android') {
   }
 }
 
-export default function ItemPopup() {
+export default function BooksList() {
   const [layoutData, setData] = useState(null);
   return (
     <View>
@@ -38,7 +39,7 @@ export default function ItemPopup() {
       />
       {layoutData !== null && (
         <ModalView layoutData={layoutData} close={() => setData(null)} />
-      )}
+        )}
     </View>
   );
 }
@@ -88,7 +89,7 @@ function ModalView({ layoutData, close }) {
           ]}>
           <Image
             source={{
-              uri: 'https://i.pinimg.com/474x/bc/58/c0/bc58c04652c3fa566727695db01c480e--ocean-sunset-the-ocean.jpg',
+              uri: book,
             }}
             resizeMode="cover"
             style={styles.fill}
@@ -128,12 +129,14 @@ class RenderItem extends Component {
           activeOpacity={0.7}>
           <Image
             source={{
-              uri: 'https://i.pinimg.com/474x/bc/58/c0/bc58c04652c3fa566727695db01c480e--ocean-sunset-the-ocean.jpg',
+              uri: books_cover,
             }}
             resizeMode="cover"
             style={styles.fill}
           />
         </TouchableOpacity>
+        <Text>My Book</Text>
+
       </View>
     );
   }
@@ -144,6 +147,7 @@ const styles = StyleSheet.create({
     height: width / 2,
     flex: 1,
     padding: 3,
+
   },
   close: {
     position: 'absolute',
@@ -158,5 +162,6 @@ const styles = StyleSheet.create({
   fill: {
     height: '100%',
     width: '100%',
+
   },
 });
