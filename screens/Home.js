@@ -3,13 +3,15 @@ import { View, Button, TouchableOpacity,ImageBackground } from "react-native";
 import { Ionicons, FontAwesome, AntDesign } from "@expo/vector-icons";
 import { StyleSheet, Text } from "react-native";
 import BooksList from "./books_list";
-
+import SearchBar from "./shared/SearchBar";
+import { Searchbar } from "react-native-paper";
 
 
 export default function Home(params) {
   return (
 
     <View style={styles.container}>
+      <Searchbar/>
       <BooksList/>
     </View>
   );

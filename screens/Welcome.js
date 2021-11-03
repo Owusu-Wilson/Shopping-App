@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 let books_img_url = "https://images.unsplash.com/photo-1513001900722-370f803f498d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80";
-export default function Login(params) {
+export default function Welcome(params) {
   const navigation = params.navigation;
   return (
     <View
@@ -43,7 +43,8 @@ export default function Login(params) {
       {/* Login button */}
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("AuthenticateUser"); // button event handles to the User Login screen
+          // navigation.navigate("AuthenticateUser"); // button event handles to the User Login screen
+          navigation.navigate("SignIn"); // button event handles to the User Login screen
           // raises screen to accept username and password
         }}
         style={{

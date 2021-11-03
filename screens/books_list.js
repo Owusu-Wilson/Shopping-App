@@ -164,4 +164,9 @@ const styles = StyleSheet.create({
     width: '100%',
 
   },
+  add_btn:{
+    color: "orange",
+    borderRadius: 30,
+    
+  }
 });

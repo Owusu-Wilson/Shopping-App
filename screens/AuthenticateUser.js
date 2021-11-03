@@ -1,19 +1,22 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 const bg = require('../res/images/login-bg.png');
-
+import {useState} from 'react';
 
 function authenticate(params) {
     return params
 }
 // This screen is raised to register a new user.
 export default function AuthenticateUser(params) {
+  const {uname, setUname} = useState('');
+  const {password, setPassword} = useState('');
+
   const navigation = params.navigation;
   
   function getUname(val) {
-    return val
+    return 
   }
-  function getPwd(val) {
+  function getPassword(val) {
     return val;
   }
 
@@ -27,27 +30,31 @@ export default function AuthenticateUser(params) {
 
   <View style={styles.container}>
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}></ImageBackground>
-  <View>
+  
     {/* //view to hold the text fields and button */}
   <View style={styles.form}> 
     <TextInput 
         multiline
         name = "uname"
+        value = {uname}
         style={styles.input}
         placeholder="username"
-      
-        onChangeText = {getUname}/>
+        onChangeText={setUname}
+       />
     <TextInput 
-        name = "psword"
+        name = "password"
+        value ={password}
         multiline
         style={styles.input}
         caretHidden
         placeholder="password"
+        onChangeText={setPassword}
 
-        onChangeText = {getPwd}/>
+
+        onChangeText = {getPassword}/>
       <TouchableOpacity
         onPress={() => {
-          alert("Logged In as " + getUname()); // button event handles to the SignUp screen
+          alert("Logged In as " + uname); // button event handles to the SignUp screen
           navigation.navigate("Home");
         }}
         style={{
@@ -65,7 +72,7 @@ export default function AuthenticateUser(params) {
       </TouchableOpacity>
         </View>
     </View>
-  </View>
+  
 );
     };
 const styles = StyleSheet.create({
@@ -96,10 +103,11 @@ const styles = StyleSheet.create({
   form:{
     padding: 30,
     alignItems: "center",
-    backgroundColor: "#000000c0",
+    flex:1,
+    justifyContent: "center",
+    // backgroundColor: "#000000c0",
     backfaceVisibility:"hidden",
- 
-    flex:""
+    height: 200,
     
     
   }
