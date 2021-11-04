@@ -1,84 +1,114 @@
-import React from "react";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import React from 'react';
+import { 
+    View, 
+    Text, 
+    TouchableOpacity, 
+    Dimensions,
+    StyleSheet,
+    StatusBar,
+    Image
+} from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import LinearGradient from 'react-native-linear-gradient';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { useTheme } from '@react-navigation/native';
 
-let books_img_url = "https://images.unsplash.com/photo-1513001900722-370f803f498d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80";
-export default function Welcome(params) {
-  const navigation = params.navigation;
-  return (
-    <View
-      style={{
-        backgroundColor: "sky-blue",
-        flex: 1,
-        paddingHorizontal: 10,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Image
-        style={{
-        //   transform: [{ rotate: "45deg" }],
-          borderRadius: 25,
-          marginBottom: 60,
-          width: 250,
-          height: 250,
-          shadowColor: "#000",
-            shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.27,
-        shadowRadius: 4.65,
+const SplashScreen = ({navigation}) => {
+    const { colors } = useTheme();
 
-        // elevation: 6,
-        }}
-        source={{
-          uri:"https://images.unsplash.com/photo-1513001900722-370f803f498d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80" ,
-        }}
-      />
-      <Text style={{ fontSize: 30, color: "grey" }}>Welcome to</Text>
-      <Text style={{ fontSize: 40, fontWeight: "bold" }}>Rene BookStore</Text>
-      
+    return (
+      <View style={styles.container}>
+          <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+        <View style={styles.header}>
+            <Animatable.Image 
+                animation="bounceIn"
+                duraton="1500"
+            source={require('../assets/logo.png')}
+            style={styles.logo}
+            resizeMode="stretch"
+            />
+        </View>
+        <Animatable.View 
+            style={[styles.footer, {
+                backgroundColor: colors.background
+            }]}
+            animation="fadeInUpBig"
+        >
+            <Text style={[styles.title, {
+                color: colors.text
+            }]}>Stay connected with everyone!</Text>
+            <Text style={styles.text}>Sign in with account</Text>
+            <View style={styles.button}>
+            <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
+                <LinearGradient
+                    colors={['#08d4c4', '#01ab9d']}
+                    style={styles.signIn}
+                >
+                    <Text style={styles.textSign}>Get Started</Text>
+                    <MaterialIcons 
+                        name="navigate-next"
+                        color="black"
+                        size={20}
+                    />
+                </LinearGradient>
+            </TouchableOpacity>
+            </View>
+        </Animatable.View>
+      </View>
+    );
+};
 
-      {/* Login button */}
-      <TouchableOpacity
-        onPress={() => {
-          // navigation.navigate("AuthenticateUser"); // button event handles to the User Login screen
-          navigation.navigate("SignInScreen"); // button event handles to the User Login screen
-          // raises screen to accept username and password
-        }}
-        style={{
-          padding: 15,
-          paddingHorizontal: 80,
-          marginTop: 10,
-          alignItems: "center",
-          borderRadius: 25,
-          flexDirection: "row",
-          backgroundColor: "black",
-        }}
-      >
-        <AntDesign name="login" size={30} color="white" />
-        <Text style={{ paddingLeft: 10, color: "white" }}>Login</Text>
-      </TouchableOpacity>
+export default SplashScreen;
 
-    {/* Sign Up button */}
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("SignUp"); // button event handles to the SignUp screen
-        }}
-        style={{
-          padding: 15,
-          paddingHorizontal: 80,
-          marginTop: 10,
-          alignItems: "center",
-          borderRadius: 25,
-          flexDirection: "row",
-          backgroundColor: "black",
-        }}
-      >
-        <AntDesign name="adduser" size={24} color="white" backgroundColor="red" />
-        <Text style={{ paddingLeft: 10, color: "white" }}>Sign Up</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+const {height} = Dimensions.get("screen");
+const height_logo = height * 0.28;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1, 
+    backgroundColor: '#009387'
+  },
+  header: {
+      flex: 2,
+      justifyContent: 'center',
+      alignItems: 'center'
+  },
+  footer: {
+      flex: 1,
+      backgroundColor: '#fff',
+      borderTopLeftRadius: 30,
+      borderTopRightRadius: 30,
+      paddingVertical: 50,
+      paddingHorizontal: 30
+  },
+  logo: {
+      width: height_logo,
+      height: height_logo
+  },
+  title: {
+      color: '#05375a',
+      fontSize: 30,
+      fontWeight: 'bold'
+  },
+  text: {
+      color: 'grey',
+      marginTop:5
+  },
+  button: {
+      alignItems: 'flex-end',
+      marginTop: 30
+  },
+  signIn: {
+      width: 150,
+      height: 40,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 50,
+      flexDirection: 'row'
+  },
+  textSign: {
+      color: 'white',
+      fontWeight: 'bold'
+  }
+});
+

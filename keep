@@ -1,0 +1,3 @@
+          <MainNavigator.Screen name="Home" component={Home} />
+          <MainNavigator.Screen name="SignUp" component={SignUp} />
+          <MainNavigator.Screen name="BooksList" component={BooksList} />
