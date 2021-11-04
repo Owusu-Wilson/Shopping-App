@@ -44,7 +44,7 @@ export default function Welcome(params) {
       <TouchableOpacity
         onPress={() => {
           // navigation.navigate("AuthenticateUser"); // button event handles to the User Login screen
-          navigation.navigate("SignIn"); // button event handles to the User Login screen
+          navigation.navigate("SignInScreen"); // button event handles to the User Login screen
           // raises screen to accept username and password
         }}
         style={{

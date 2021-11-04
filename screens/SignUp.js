@@ -9,7 +9,7 @@ export default function SignUp() {
 
   <View style={styles.container}>
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-      <Text style={styles.text}>Inside</Text>
+      <Text style={styles.text}>Store membership closed</Text>
     </ImageBackground>
   </View>
 );

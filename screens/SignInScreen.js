@@ -10,7 +10,7 @@ import {
     Alert
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-// import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 
@@ -20,8 +20,7 @@ import { AuthContext } from '../components/context';
 
 import Users from '../model/users';
 
-// const SignIn = ({navigation}) => {
-export default function SignIn(navigation){
+const SignInScreen = ({navigation}) => {
 
     const [data, setData] = React.useState({
         username: '',
@@ -216,14 +215,14 @@ export default function SignIn(navigation){
                     style={styles.signIn}
                     onPress={() => {loginHandle( data.username, data.password )}}
                 >
-                {/* <LinearGradient
+                <LinearGradient
                     colors={['#08d4c4', '#01ab9d']}
                     style={styles.signIn}
                 >
                     <Text style={[styles.textSign, {
                         color:'#fff'
                     }]}>Sign In</Text>
-                </LinearGradient> */}
+                </LinearGradient>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -244,7 +243,7 @@ export default function SignIn(navigation){
     );
 };
 
-// export default SignIn;
+export default SignInScreen;
 
 const styles = StyleSheet.create({
     container: {

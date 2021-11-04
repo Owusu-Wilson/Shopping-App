@@ -8,7 +8,7 @@ import Home from "./screens/Home";
 import SignUp from "./screens/SignUp";
 // import AuthenticateUser from "./screens/AuthenticateUser";
 import BooksList from "./screens/books_list";
-import SignIn from './screens/SignIn'
+import SignInScreen from './screens/SignInScreen'
 
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
           // initialRouteName=""
         >
           <MainNavigator.Screen name="Welcome" component={Welcome} />
-          <MainNavigator.Screen name="SignIn" component={SignIn} />
+          <MainNavigator.Screen name="SignInScreen" component={SignInScreen} />
           
           <MainNavigator.Screen name="Home" component={Home} />
           <MainNavigator.Screen name="SignUp" component={SignUp} />
