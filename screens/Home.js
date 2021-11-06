@@ -5,6 +5,7 @@ import { StyleSheet, Text } from "react-native";
 import BooksList from "./books_list";
 import SearchBar from "./shared/SearchBar";
 import { Searchbar } from "react-native-paper";
+import MainTabScreen from 'MainTabScreen'
 
 
 export default function Home(params) {

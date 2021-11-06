@@ -1,5 +1,4 @@
-
-const Users = [
+export default Users = [
     {
         id: 1, 
         email: 'user1@email.com',
@@ -22,5 +21,3 @@ const Users = [
         userToken: 'testtoken'
     },
 ];
-
-export default Users;

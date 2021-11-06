@@ -9,11 +9,11 @@ import {
     Image
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import LinearGradient from 'react-native-linear-gradient';
+
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useTheme } from '@react-navigation/native';
 
-const SplashScreen = ({navigation}) => {
+const WelcomeScreen = ({navigation}) => {
     const { colors } = useTheme();
 
     return (
@@ -40,17 +40,14 @@ const SplashScreen = ({navigation}) => {
             <Text style={styles.text}>Sign in with account</Text>
             <View style={styles.button}>
             <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
-                <LinearGradient
-                    colors={['#08d4c4', '#01ab9d']}
-                    style={styles.signIn}
-                >
+
                     <Text style={styles.textSign}>Get Started</Text>
                     <MaterialIcons 
                         name="navigate-next"
                         color="black"
                         size={20}
                     />
-                </LinearGradient>
+               
             </TouchableOpacity>
             </View>
         </Animatable.View>
@@ -58,7 +55,7 @@ const SplashScreen = ({navigation}) => {
     );
 };
 
-export default SplashScreen;
+export default WelcomeScreen;
 
 const {height} = Dimensions.get("screen");
 const height_logo = height * 0.28;
@@ -107,8 +104,9 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
   },
   textSign: {
-      color: 'white',
-      fontWeight: 'bold'
+      color: 'black',
+      fontWeight: 'bold',
+      fontSize: 20
   }
 });
 
