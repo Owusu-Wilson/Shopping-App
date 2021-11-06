@@ -12,7 +12,8 @@ Looking forward to contribute to your web, python and react native projects.
 <hr>
 You can contact me via:
 # CONTACT
-
->> Email : <wowusu008@st.ug.edu.gh>
->> Telephone: <+233 277 589 546>
->> ID : 10844432
+<ul>
+<li> >> Email : <wowusu008@st.ug.edu.gh> </li>
+<li> >> Telephone: <+233 277 589 546>  </li>
+<li> >> ID : 10844432 </li>
+</ul>
