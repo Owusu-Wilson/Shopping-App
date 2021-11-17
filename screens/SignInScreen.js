@@ -1,78 +1,31 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
-const bg = require('../res/images/login-bg.png');
-import {useState} from 'react';
+import { Dimensions, ImageBackground, StyleSheet, Text,TextInput, View } from "react-native";
+import Home from "./Home";
 
-function authenticate(params) {
-    return params
-}
+import { Provider } from 'react-native-paper'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { theme } from "../core/theme";
+import {
+  StartScreen,
+  LoginScreen,
+  RegisterScreen,
+  ResetPasswordScreen,
+  Dashboard,
+} from '.'
+
+
+const image = { uri: "https://images.unsplash.com/photo-1513094735237-8f2714d57c13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=435&q=80" };
+
 // This screen is raised to register a new user.
-export default function SignInScreen(params) {
-  const {uname, setUname} = useState('');
-  const {password, setPassword} = useState('');
-
-  const navigation = params.navigation;
-  
-  function getUname(val) {
-    return 
-  }
-  function getPassword(val) {
-    return val;
-  }
-
-
-
-
-
-
-
+export default function SignInScreen() {
     return (
 
   <View style={styles.container}>
-    <ImageBackground source={bg} resizeMode="cover" style={styles.image}></ImageBackground>
-  
-    {/* //view to hold the text fields and button */}
-  <View style={styles.form}> 
-    <TextInput 
-        multiline
-        name = "uname"
-        value = {uname}
-        style={styles.input}
-        placeholder="username"
-        onChangeText={setUname}
-       />
-    <TextInput 
-        name = "password"
-        value ={password}
-        multiline
-        style={styles.input}
-        caretHidden
-        placeholder="password"
-        onChangeText={setPassword}
-
-
-        onChangeText = {getPassword}/>
-      <TouchableOpacity
-        onPress={() => {
-          alert("Logged In as " + uname); // button event handles to the SignUp screen
-          navigation.navigate("Home");
-        }}
-        style={{
-          padding: 15,
-          paddingHorizontal: 80,
-          marginTop: 10,
-          alignItems: "center",
-          borderRadius: 25,
-          flexDirection: "row",
-          backgroundColor: "black",
-        }}
-      >
-      
-        <Text style={{ paddingLeft: 10, color: "white" }}>Log In </Text>
-      </TouchableOpacity>
-        </View>
-    </View>
-  
+    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <LoginScreen></LoginScreen>
+    </ImageBackground>
+  </View>
 );
     };
 const styles = StyleSheet.create({
@@ -81,16 +34,21 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center",
-    opacity:1,
+    justifyContent: "center"
   },
   text: {
     color: "white",
     fontSize: 42,
     lineHeight: 84,
     fontWeight: "bold",
+    flexDirection:"column",
     textAlign: "center",
-    backgroundColor: "#000000c0"
+    alignItems: "center",
+    backgroundColor: "white",
+    borderRadius: 25,
+    maxHeight: 700, 
+    width: 350
+
   },
   input: {
     borderWidth: 2,
@@ -98,18 +56,7 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     padding: 8,
     margin: 10,
-    width: 200,
-  },
-  form:{
-    padding: 30,
-    alignItems: "center",
-    flex:1,
-    justifyContent: "center",
-    // backgroundColor: "#000000c0",
-    backfaceVisibility:"hidden",
-    height: 200,
-    
-    
+    width: 200
   }
 });
 

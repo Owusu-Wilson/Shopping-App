@@ -9,11 +9,11 @@ import {
     Image
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useTheme } from '@react-navigation/native';
 
-const WelcomeScreen = ({navigation}) => {
+
+const SplashScreen = ({navigation}) => {
     const { colors } = useTheme();
 
     return (
@@ -22,7 +22,7 @@ const WelcomeScreen = ({navigation}) => {
         <View style={styles.header}>
             <Animatable.Image 
                 animation="bounceIn"
-                duraton="1500"
+                duraton="5000"
             source={require('../assets/logo.png')}
             style={styles.logo}
             resizeMode="stretch"
@@ -36,26 +36,43 @@ const WelcomeScreen = ({navigation}) => {
         >
             <Text style={[styles.title, {
                 color: colors.text
-            }]}>Stay connected with everyone!</Text>
-            <Text style={styles.text}>Sign in with account</Text>
+            }]}>Welcome to</Text>
+            <Text style={styles.name}>CLIX CART</Text>
+            <Text style={styles.text}>Start shopping now!</Text>
             <View style={styles.button}>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignInScreen')}>
+
+            <View style={styles.nextBtn}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Login')}
+                style={{
+                    padding: 15,
+                    paddingHorizontal: 80,
+                    marginTop: 10,
+                    alignItems: "center",
+                    borderRadius: 10,
+                    flexDirection: "row",
+                    backgroundColor: "black",
+                    }}
+            >
 
                     <Text style={styles.textSign}>Get Started</Text>
                     <MaterialIcons 
                         name="navigate-next"
-                        color="black"
-                        size={20}
+                        color="white"
+                        size={30}
+                        style={{
+                            paddingLeft:25
+                        
+                            }}
                     />
-               
             </TouchableOpacity>
+            </View>
             </View>
         </Animatable.View>
       </View>
     );
 };
 
-export default WelcomeScreen;
+export default SplashScreen;
 
 const {height} = Dimensions.get("screen");
 const height_logo = height * 0.28;
@@ -84,8 +101,13 @@ const styles = StyleSheet.create({
   },
   title: {
       color: '#05375a',
-      fontSize: 30,
-      fontWeight: 'bold'
+      fontSize: 20,
+      
+  },
+  name:{
+    fontSize: 30, 
+    color: "rgb(42, 197, 112)",
+    fontWeight: 'bold'
   },
   text: {
       color: 'grey',
@@ -104,9 +126,14 @@ const styles = StyleSheet.create({
       flexDirection: 'row'
   },
   textSign: {
-      color: 'black',
-      fontWeight: 'bold',
-      fontSize: 20
+      color: 'white',
+      fontWeight: 'bold'
+    //   border
+
+  },
+  nextBtn: {
+    //   alignItems: 'center',
+      paddingLeft:20
   }
 });
 
