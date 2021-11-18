@@ -70,7 +70,7 @@ export default function Login({navigation}) {
         </Button>
         <View style={styles.row}>
           <Text>Don’t have an account? </Text>
-          <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
+          <TouchableOpacity onPress={() => navigation.replace('SignUpScreen')}>
             <Text style={styles.link}>Sign up</Text>
           </TouchableOpacity>
         </View>

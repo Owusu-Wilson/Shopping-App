@@ -9,7 +9,7 @@ import SignUpScreen from "./screens/SignUpScreen";
 
 import  Login  from "./screens/Login";
 // import AuthenticateUser from "./screens/AuthenticateUser";
-import BooksList from "./screens/books_list";
+import BooksList from "./components/BooksList";
 import SignInScreen from './screens/SignInScreen'
 
 

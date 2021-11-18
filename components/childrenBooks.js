@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 const { width } = Dimensions.get('screen');
 let books_cover = "https://i.pinimg.com/564x/d9/7c/51/d97c518471a161c6badd53b365ca55d6.jpg";
-let book = "https://legiit-service.s3.amazonaws.com/b9bf2238bed8f20b75358d8f5d2dd332/ffb148349fb4c1fcc505f88e64d63c77.jpg"
+let book = "https://i.pinimg.com/originals/e8/2f/cc/e82fcc725b3bd2120dd4622370882507.jpg"
 let data = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
@@ -26,7 +26,7 @@ if (Platform.OS === 'android') {
   }
 }
 
-export default function BooksList() {
+export default function ChildrenBooks() {
   const [layoutData, setData] = useState(null);
   return (
     <View>
@@ -66,6 +66,10 @@ function ModalView({ layoutData, close }) {
     );
     setExpanded(false);
   };
+  
+  const toCart = ()=>{
+      alert("Cart")
+  }
   return (
     <Modal visible onRequestClose={onRequestClose} transparent>
       <View style={styles.center}>
@@ -88,18 +92,19 @@ function ModalView({ layoutData, close }) {
             { backgroundColor: '#ccc', overflow: 'hidden' },
           ]}>
           <Image
-            source={{
-              uri: book,
-            }}
+            source={{uri: book,}}
             resizeMode="cover"
             style={styles.fill}
           />
           {expanded && (
             <View style={styles.close}>
               <Button title="close" onPress={onRequestClose} />
+              <Button title="Buy" onPress={toCart} />
+
             </View>
           )}
         </View>
+          
       </View>
     </Modal>
   );
@@ -135,7 +140,7 @@ class RenderItem extends Component {
             style={styles.fill}
           />
         </TouchableOpacity>
-        <Text>My Book</Text>
+        <Text>My Book </Text>
 
       </View>
     );
