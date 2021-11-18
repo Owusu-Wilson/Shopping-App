@@ -32,7 +32,7 @@ export const BooksCard = ({ books }) => {
           }}
         >
           <Image
-            style={{ marginTop: 42, height: "50%", width: "auto" }}
+            style={{ marginTop:5, height: "100%", width: "auto" }}
             source={books.img}
           />
         </View>
