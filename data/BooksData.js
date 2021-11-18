@@ -1,7 +1,7 @@
 export const books = [
     {
       id: "1",
-      name: "dance",
+      name: "Books Greed",
       price: "39.99",
       like: "true",
       about: "Books Greed",
@@ -10,7 +10,7 @@ export const books = [
  
     {
       id: "2",
-      name: "dance",
+      name: "Guy Kawasaki",
       price: "39.99",
       like: "true",
       about: "Guy Kawasaki",
@@ -19,7 +19,7 @@ export const books = [
  
     {
       id: "3",
-      name: "dance",
+      name: "The King Of Drugs",
       price: "39.99",
       like: "true",
       about: "The King Of Drugs",
@@ -27,7 +27,7 @@ export const books = [
     },
     {
       id: "4",
-      name: "dance",
+      name: "A million to One",
       price: "39.99",
       like: "true",
       about: "A million to One",
